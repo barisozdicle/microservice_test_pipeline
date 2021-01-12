@@ -1,0 +1,45 @@
+{
+  "port": 5051,
+  "protocol": "http",
+  "stubs": [
+    {
+      "predicates": [
+        {
+          "deepEquals": {
+            "method": "GET"
+          }
+        },
+        {
+          "deepEquals": {
+            "path": "/api/v1/planets/3"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": {
+              "X-Content-Type-Options": "nosniff",
+              "X-XSS-Protection": "1; mode=block",
+              "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+              "Pragma": "no-cache",
+              "Expires": "0",
+              "X-Frame-Options": "DENY",
+              "Date": "Sun, 14 Apr 2019 14:44:10 GMT",
+              "Content-Type": "application/json;charset=UTF-8",
+              "Transfer-Encoding": "chunked",
+              "Connection": "close"
+            },
+            "body": {"name":"Death Star","model":"DS-1 Orbital Battle Station","manufacturer":"Imperial Department of Military Research, Sienar Fleet Systems","cost_in_credits":"1000000000000","length":"120000","max_atmosphering_speed":"n/a","crew":"342,953","passengers":"843,342","cargo_capacity":"1000000000000","consumables":"3 years","hyperdrive_rating":"4.0","MGLT":"10","starship_class":"Deep Space Mobile Battlestation","pilots":[],"films":["http://swapi.dev/api/films/1/"],"created":"2014-12-10T16:36:50.509000Z","edited":"2014-12-20T21:26:24.783000Z","url":"http://swapi.dev/api/starships/9/"},
+            "_mode": "text",
+            "_proxyResponseTime": 117
+          },
+          "_behaviors": {
+            "wait": 117
+          }
+        }
+      ]
+    }
+  ]
+}
