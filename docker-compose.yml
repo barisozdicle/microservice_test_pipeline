@@ -2,12 +2,23 @@ version: "3"
 services:
   mountebank:
     container_name: mountebank
-    image: jkris/mountebank:latest
+    image: test-mountebank
     volumes:
-      - ./imposters:/imposters
+      - ./testEnv/imposters:/imposters
     ports:
-      - 2525:2525
       - 5050:5050
       - 5051:5051
       - 5052:5052
-    command: --configfile /imposters/imposters.ejs --allowInjection
+
+  mysql:
+    container_name: mysql
+    image: test-mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_USER: baris
+      MYSQL_PASSWORD: 1
+      MYSQL_DATABASE: StarWarsDB
+      LANG: C-UTF-8
+

@@ -1,0 +1,7 @@
+FROM mysql:latest
+
+ADD ./testEnv/mysql/schema.sql /docker-entrypoint-initdb.d
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["mysqld"]

@@ -1,0 +1,3 @@
+FROM jkris/mountebank:latest
+
+CMD ["start", "--configfile", "/imposters/imposters.ejs", "--allowInjection"]
