@@ -1,13 +1,11 @@
-import flask
-import requests
+from flask import Flask
+import logging as logger
 
-app = flask.Flask(__name__)
-app.config['DEBUG'] = True
+logger.basicConfig(level="DEBUG")
 
+flaskAppInstance = Flask(__name__)
 
-@app.route('/', methods=['GET'])
-def home():
-    return "baris"
+if __name__ == '__main__':
+    logger.debug("Starting Flask Server")
 
-
-app.run()
+    flaskAppInstance.run(host="0.0.0.0", port=5000, debug=True, use_reloader=True)

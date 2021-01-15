@@ -1,5 +1,18 @@
 version: "3"
 services:
+  python:
+    container_name: python
+    image: test-python
+    ports:
+      - 5000:5000
+    depends_on:
+      - mountebank
+      - mysql
+    environment:
+      - PEOPLE_URL=http://mountebank:5050
+      - PLANETS_URL=http://mountebank:5051
+      - STARSHIP_URL=http://mountebank:5052
+
   mountebank:
     container_name: mountebank
     image: test-mountebank
