@@ -1,11 +1,10 @@
-from flask import Flask
-import logging as logger
+from bottle import route, run
 
-logger.basicConfig(level="DEBUG")
 
-flaskAppInstance = Flask(__name__)
+@route('/')
+def index():
+    return "Starwars"
 
-if __name__ == '__main__':
-    logger.debug("Starting Flask Server")
 
-    flaskAppInstance.run(host="0.0.0.0", port=5000, debug=True, use_reloader=True)
+if __name__ == "__main__":
+    run(host='0.0.0.0', port=8080, debug=True, reloader=True)

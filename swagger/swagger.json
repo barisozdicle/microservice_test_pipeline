@@ -1,0 +1,86 @@
+swagger: "2.0"
+info:
+version: "1.0.0"
+title: "Starwars"
+host: "starwars.swagger.io"
+basePath: "/v2"
+tags:
+- name: "People"
+description: "Starwars People"
+- name: "Planets"
+description: "Starwars Planets"
+- name: "Starships"
+description: "Starwars Starships"
+schemes:
+- "https"
+- "http"
+paths:
+/people/{peopleId}:
+get:
+tags:
+- "People"
+operationId: "getPeopleById"
+produces:
+- "application/xml"
+- "application/json"
+parameters:
+- name: "peopleId"
+in: "path"
+required: true
+type: "integer"
+maximum: 10.0
+minimum: 1.0
+format: "int64"
+responses:
+"200":
+description: "Success"
+"400":
+description: "Invalid People ID"
+"404":
+description: "People not found"
+/planets/{planetsId}:
+get:
+tags:
+- "Planets"
+operationId: "getPlanetsId"
+produces:
+- "application/xml"
+- "application/json"
+parameters:
+- name: "planetsId"
+in: "path"
+required: true
+type: "integer"
+maximum: 10.0
+minimum: 1.0
+format: "int64"
+responses:
+"200":
+description: "Success"
+"400":
+description: "Invalid Planets ID"
+"404":
+description: "Planets not found"
+/starships/{starshipsId}:
+get:
+tags:
+- "Starships"
+operationId: "getStarshipsById"
+produces:
+- "application/xml"
+- "application/json"
+parameters:
+- name: "starshipsId"
+in: "path"
+required: true
+type: "integer"
+maximum: 10.0
+minimum: 1.0
+format: "int64"
+responses:
+"200":
+description: "Success"
+"400":
+description: "Invalid Starships ID"
+"404":
+description: "Starships not found"

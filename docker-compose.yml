@@ -35,3 +35,13 @@ services:
       MYSQL_DATABASE: StarWarsDB
       LANG: C-UTF-8
 
+  swagger:
+    image: swaggerapi/swagger-ui
+    expose:
+      - 8080
+    ports:
+      - 8090:8080
+    environment:
+      SWAGGER_JSON: /spec/swagger.json
+    volumes:
+      - ./swagger:/spec
